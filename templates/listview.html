@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ {% for item in paciente %}
+    <ul>
+        <li>{{ item.nome }}</li>
+        <li>{{ item.sobrenome }}</li>
+        <li>{{ item.data_nasci }}</li>
+        <li>{{ item.genero }}</li>
+        <li>{{ item.cpf }}</li>
+        <li>{{ item.uf_cpf }}</li>
+        <li>{{ item.email }}</li>
+        <li>{{ item.celular }}</li>
+        <li>{{ item.tel_fixo }}</li>
+        <li>{{ item.convenio }}</li>
+        <li>{{ item.carteira_convenio }}</li>
+        <li>{{ item.val_carteirinha }}</li>
+    </ul>
+ {% endfor %}
+
+
+</body>
+</html>
