@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from django.views.generic import ListView
 from register_patient.models import Paciente
 
@@ -7,3 +8,7 @@ class PacienteViewCBV(ListView):
     context_object_name = 'paciente'
     # Template especificado
     template_name = 'listview.html'
+
+
+def teste_view(request):
+    return render(request, 'layout.html')

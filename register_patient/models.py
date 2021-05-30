@@ -6,7 +6,7 @@ from register_patient.choices import SEXO_CHOICES, CONVENIOS_CHOICES
 
 
 class Paciente(models.Model):
-    prontuario = models.IntegerField(max_length=20, verbose_name='Prontuário')
+    prontuario = models.IntegerField(verbose_name='Prontuário')
     nome = models.CharField(max_length=100, verbose_name='Nome')
     sobrenome = models.CharField(max_length=100, verbose_name='Sobrenome')
     data_nasci = models.DateField(auto_now_add=False, verbose_name='Data de Nascimento')
