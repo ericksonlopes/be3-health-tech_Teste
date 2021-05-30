@@ -1,0 +1,141 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Listagem
+{% endblock %}
+
+{% block content %}
+    <div class="content-detached content-center">
+      <div class="content-body"><div class="content-overlay"></div>
+          <section class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="bug-list-search">
+                                <div class="bug-list-search-content">
+                                    <div class="sidebar-toggle d-block d-lg-none"><i class="feather icon-menu font-large-1"></i></div>
+                                    <form action="#">
+                                        <div class="position-relative">
+                                            <input type="search" id="search-contacts" class="form-control" placeholder="Procurar por paciente...">
+                                            <div class="form-control-position">
+                                                <i class="fa fa-search text-size-base text-muted la-rotate-270"></i>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          <section class="row all-contacts">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-head">
+                            <div class="card-header">
+                                <h4 class="card-title">Listagem dos Pacientes</h4>
+                                <div class="heading-elements mt-0">
+                                    <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#AddContactModal"><i class="d-md-none d-block feather icon-plus white"></i>
+                                        <span class="d-md-block d-none">Adicionar Paciente</span></button>
+                                    <div class="modal fade" id="AddContactModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <section class="contact-form">
+                                                    <form id="form-add-contact" class="contact-input">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel1">Add New Contact</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <fieldset class="form-group col-12">
+                                                                <input type="text" id="contact-name" class="contact-name form-control" placeholder="Name">
+                                                            </fieldset>
+                                                            <fieldset class="form-group col-12">
+                                                                <input type="text" id="contact-email" class="contact-email form-control" placeholder="Email">
+                                                            </fieldset>
+                                                            <fieldset class="form-group col-12">
+                                                                <input type="text" id="contact-phone" class="contact-phone form-control" placeholder="Phone Number">
+                                                            </fieldset>
+                                                            <fieldset class="form-group col-12">
+                                                                <input type="checkbox" id="favorite" class="contact-fav input-chk"> Favorite
+                                                            </fieldset>
+                                                            <fieldset class="form-group col-12">
+                                                                <input type="file" class="form-control-file" id="user-image">
+                                                            </fieldset>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <fieldset class="form-group position-relative has-icon-left mb-0">
+                                                                <button type="button" id="add-contact-item" class="btn btn-info add-contact-item" data-dismiss="modal"><i
+                                                                     class="fa fa-paper-plane-o d-block d-lg-none"></i> <span class="d-none d-lg-block">Add New</span></button>
+                                                            </fieldset>
+                                                        </div>
+                                                    </form>
+                                                </section>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button class="btn btn-default btn-sm"><i class="feather icon-settings white"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body">
+                                <!-- Task List table -->
+
+                                <div class="table-responsive">
+                                    <table id="users-contacts" class="table table-white-space table-bordered row-grouping display no-wrap icheck table-middle text-center">
+                                        <thead>
+                                            <tr>
+                                                <th>Nome</th>
+                                                <th>Email</th>
+                                                <th>Telefone</th>
+                                                <th>Gênero</th>
+                                                <th>Convênio</th>
+                                                <th>RG</th>
+                                                <th>Editar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for item in paciente %}
+                                            <tr>
+<!--                                                Nome e sobrenome-->
+                                                <td>
+                                                    <div class="media">
+                                                        <div class="media-body media-middle">
+                                                            <a class="media-heading name">{{ item.nome }} {{ item.sobrenome }}</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+<!--                                                Email-->
+                                                <td class="text-center">
+                                                    <a class="email" href="mailto:email@example.com">{{ item.email }}</a>
+                                                </td>
+<!--                                                Telefone-->
+                                                <td class="phone">{{ item.celular }}</td>
+<!--                                                Genero-->
+                                                <td class="Gênero">{{ item.genero }}</td>
+<!--                                                convenio-->
+                                                <td class="Convênio">{{ item.convenio }}</td>
+<!--                                                data de nascimento-->
+                                                <td class="text-center">
+                                                    {{ item.rg }}
+                                                </td>
+<!--                                                editar-->
+                                                <td>
+                                                    <a data-toggle="modal" data-target="#EditContactModal" class="primary edit mr-1"><i class="fa fa-pencil"></i></a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+      </div>
+ </div>
+{% endblock %}

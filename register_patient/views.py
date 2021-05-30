@@ -7,7 +7,7 @@ class PacienteViewCBV(ListView):
     model = Paciente
     context_object_name = 'paciente'
     # Template especificado
-    template_name = 'listview.html'
+    template_name = 'list_table.html'
 
 
 def teste_view(request):
