@@ -1,10 +1,9 @@
-{% load static %}
 <!DOCTYPE html>
-
-<html class="loading" lang="pt-br" data-textdirection="ltr">
+{% load static %}
+<html class="loading" lang="en" data-textdirection="ltr">
   <!-- BEGIN: Head-->
-
-  <head>
+  
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -111,13 +110,6 @@
                 </ul>
               </li>
               <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"><i class="ficon feather icon-maximize"></i></a></li>
-              <li class="nav-item nav-search"><a class="nav-link nav-link-search" href="#"><i class="ficon feather icon-search"></i></a>
-                <div class="search-input">
-                  <input class="input" type="text" placeholder="Explore Stack..." tabindex="0" data-search="template-search">
-                  <div class="search-input-close"><i class="feather icon-x"></i></div>
-                  <ul class="search-list"></ul>
-                </div>
-              </li>
             </ul>
             <ul class="nav navbar-nav float-right">
               <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
@@ -133,7 +125,6 @@
     </nav>
     <!-- END: Header-->
 
-
     <!-- BEGIN: Main Menu-->
     <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
       <div class="main-menu-content">
@@ -143,7 +134,12 @@
     <!-- END: Main Menu-->
 
     <!-- BEGIN: Content-->
-    {% block content %}{% endblock %}
+    <div class="app-content content">
+      <div class="content-overlay"></div>
+      <div class="content-wrapper">
+       {% block content %}{% endblock %}
+      </div>
+    </div>
     <!-- END: Content-->
 
     <!-- BEGIN: Footer-->
@@ -179,5 +175,5 @@
   </body>
   <!-- END: Body-->
 
-<!-- Mirrored from pixinvent.com/stack-responsive-bootstrap-4-admin-template/html/ltr/vertical-modern-menu-template/layout.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Mar 2021 20:32:37 GMT -->
+<!-- Mirrored from pixinvent.com/stack-responsive-bootstrap-4-admin-template/html/ltr/vertical-modern-menu-template/app-contacts.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Mar 2021 20:32:37 GMT -->
 </html>
