@@ -236,9 +236,94 @@ Listagem
                                                 <td>
                                                     <a href="{% url 'update' item.id %}" ><i class="fa fa-pencil"></i></a>
                                                 </td>
+
                                                 <td>
-                                                    <a class="media-heading name" href="{% url 'update' item.id %}" >{{ item.nome }} {{ item.sobrenome }}</a>
+                                                    <a class="media-heading name" href="{% url 'update' item.id %}" data-toggle="modal" data-target="#default">
+                                                        {{ item.nome }} {{ item.sobrenome }}
+                                                    </a>
+
+                                                    <div class="modal fade text-left" id="default" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                                                      <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                          <div class="modal-header">
+                                                            <h4 class="modal-title" id="myModalLabel1">{{ item.nome }} {{ item.sobrenome }}</h4>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                              <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                          </div>
+                                                          <div class="modal-body">
+                                                            <div class="card-body">
+                                                            <div class="row">
+                                                              <div class="col-12 col-md-4">
+                                                                <table class="table table-borderless">
+                                                                  <tbody>
+                                                                    <tr>
+                                                                      <td>Pronturario:</td>
+                                                                      <td>{{ item.prontuario }}</td>
+                                                                    </tr>
+                                                                  <tr>
+                                                                      <td>Email:</td>
+                                                                      <td>{{ item.email }}</td>
+                                                                    </tr>
+                                                                  <tr>
+                                                                      <td>Data de Nascimento:</td>
+                                                                      <td>{{ item.data_nasci }}</td>
+                                                                    </tr>
+                                                                  <tr>
+                                                                      <td>Genêro:</td>
+                                                                      <td>{{ item.genero }}</td>
+                                                                    </tr>
+                                                                  <tr>
+                                                                      <td>CPF:</td>
+                                                                      <td>{{ item.cpf }}</td>
+                                                                    </tr>
+                                                                  <tr>
+                                                                      <td>RG:</td>
+                                                                      <td>{{ item.rg }}</td>
+                                                                    </tr>
+                                                                  <tr>
+                                                                      <td>UF fo RG:</td>
+                                                                      <td>{{ item.uf_rg }}</td>
+                                                                    </tr>
+                                                                  <tr>
+                                                                      <td>Celular:</td>
+                                                                      <td>{{ item.celular }}</td>
+                                                                    </tr>
+                                                                  <tr>
+                                                                      <td>Telefone Fixo:</td>
+                                                                      <td>{{ item.tel_fixo }}</td>
+                                                                    </tr>
+                                                                  <tr>
+                                                                      <td>Convênio:</td>
+                                                                      <td>{{ item.convenio }}</td>
+                                                                    </tr>
+                                                                  <tr>
+                                                                      <td>Carteira Do Convênio:</td>
+                                                                      <td>{{ item.carteira_convenio }}</td>
+                                                                    </tr>
+                                                                  <tr>
+                                                                      <td>Validade Da Carteira:</td>
+                                                                      <td>{{ item.val_carteirinha }}</td>
+                                                                    </tr>
+
+                                                                  </tbody>
+                                                                </table>
+                                                              </div>
+                                                              <div class="col-12 col-md-8">
+
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          </div>
+                                                          <div class="modal-footer">
+                                                            <button type="button" class="btn grey btn-outline-secondary" data-dismiss="modal">Close</button>
+                                                            <a href="{% url 'update' item.id %}"><button type="button"  class="btn btn-outline-primary">Editar Dados</button></a>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      </div>
                                                 </td>
+
                                                  <td class="text-center">
                                                     {{ item.cpf }}
                                                 </td>
