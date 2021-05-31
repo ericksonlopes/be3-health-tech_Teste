@@ -28,3 +28,5 @@ def create_paciente(request):
             val_carteirinha=request.POST[' val_carteirinha'],
         )
         return render(request, 'create_pac.html')
+
+    return render(request, 'create_pac.html')
