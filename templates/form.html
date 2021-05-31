@@ -73,7 +73,8 @@
 
                 <h6>Genero</h6>
                 <select class="form-control" id="genero" name="genero">
-
+                    {% if pac %}<option>{{ pac.genero }}</option>{% endif %}
+                    <option></option>
                     <option>Feminino</option>
                     <option>Masculino</option>
                     <option>Nenhuma das opções</option>
@@ -131,8 +132,12 @@
     <h4 class="form-group col-12"><i class="fa fa-paperclip"></i> Convênio</h4><hr>
 <!--   Convenio-->
     <fieldset class="form-group col-10">
+        <h6>Selecione um Convênio
+                    <small class="text-muted">(99) 99999-9999</small>
+                </h6>
         <select class="form-control" id="convenio" name="convenio">
-            <option>Selecione Um Convênio</option>
+            {% if pac %}<option>{{ pac.convenio }}</option>{% endif %}
+            <option></option>
             <option>SulAmérica</option>
             <option>NotreDame Intermédica</option>
             <option>Prevent Senior</option>
@@ -141,7 +146,6 @@
             <option>GreenLine Sistema de Saúde</option>
             <option>Bradesco Seguros</option>
             <option>Hapvida Saúde</option>
-
         </select>
     </fieldset>
 

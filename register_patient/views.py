@@ -23,8 +23,8 @@ def create_pac(request):
                 rg=request.POST['rg'],
                 uf_rg=request.POST['uf_rg'],
                 email=request.POST['email'],
-                celular=request.POST['celular'],
-                tel_fixo=request.POST['tel_fixo'],
+                celular=request.POST['celular'].replace('_', ''),
+                tel_fixo=request.POST['tel_fixo'].replace('_', ''),
                 convenio=request.POST['convenio'],
                 carteira_convenio=request.POST['carteira_convenio'],
                 val_carteirinha=request.POST['val_carteirinha'],
@@ -39,10 +39,9 @@ def create_pac(request):
 
 
 def update_pac(request, pk):
-    pac = Paciente.objects.get(pk=pk)
-
     if request.method == 'GET':
-        return render(request, 'update_pac.html', {'pac': pac})
+        return render(request, 'update_pac.html', {'pac': Paciente.objects.get(pk=pk)})
+
     else:
         try:
             Paciente.objects.filter(pk=pk).update(
@@ -55,16 +54,17 @@ def update_pac(request, pk):
                 rg=request.POST['rg'],
                 uf_rg=request.POST['uf_rg'],
                 email=request.POST['email'],
-                celular=request.POST['celular'],
-                tel_fixo=request.POST['tel_fixo'],
+                celular=request.POST['celular'].replace('_', ''),
+                tel_fixo=request.POST['tel_fixo'].replace('_', ''),
                 convenio=request.POST['convenio'],
                 carteira_convenio=request.POST['carteira_convenio'],
                 val_carteirinha=request.POST['val_carteirinha'],
             )
-            return render(request, 'update_pac.html', {'save': 'Alteração Salva com sucesso', 'pac': pac})
+            return render(request, 'update_pac.html', {'save': 'Alteração Salva com sucesso',
+                                                       'pac': Paciente.objects.get(pk=pk)})
         except Exception as err:
             return render(request, 'update_pac.html', {'error': f'Não foi possivel salvar o novo paciente, Por favor, '
                                                                 f'tente novamente com as informações corretas. {err}',
-                                                       'pac': pac})
+                                                       'pac': Paciente.objects.get(pk=pk)})
 
 

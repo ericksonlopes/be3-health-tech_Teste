@@ -25,4 +25,4 @@ class Paciente(models.Model):
     val_carteirinha = models.CharField(max_length=5, verbose_name='Validade Carteira')
 
     def __str__(self):
-        return str(self.nome) + str(self.sobrenome)
+        return str(self.nome) + '-' + str(self.sobrenome) + '-' + str(self.pk)
