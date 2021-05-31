@@ -221,44 +221,33 @@ Listagem
                                     <table id="users-contacts" class="table table-white-space table-bordered row-grouping display no-wrap icheck table-middle text-center">
                                         <thead>
                                             <tr>
-                                                <th>Nome</th>
-                                                <th>Email</th>
-                                                <th>Telefone</th>
-                                                <th>Gênero</th>
-                                                <th>Convênio</th>
-                                                <th>RG</th>
                                                 <th>Editar</th>
+                                                <th>Nome</th>
+                                                <th>CPF</th>
+                                                <th>Celular</th>
+                                                <th>Email</th>
+                                                <th>Convênio</th>
+
                                             </tr>
                                         </thead>
                                         <tbody>
                                         {% for item in paciente %}
                                             <tr>
-<!--                                                Nome e sobrenome-->
-                                                <td>
-                                                    <div class="media">
-                                                        <div class="media-body media-middle">
-                                                            <a class="media-heading name" href="{% url 'update' item.id %}" >{{ item.nome }} {{ item.sobrenome }}</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-<!--                                                Email-->
-                                                <td class="text-center">
-                                                    {{ item.email }}
-                                                </td>
-<!--                                                Telefone-->
-                                                <td class="phone">{{ item.celular }}</td>
-<!--                                                Genero-->
-                                                <td class="Gênero">{{ item.genero }}</td>
-<!--                                                convenio-->
-                                                <td class="Convênio">{{ item.convenio }}</td>
-<!--                                                data de nascimento-->
-                                                <td class="text-center">
-                                                    {{ item.rg }}
-                                                </td>
-<!--                                                editar-->
                                                 <td>
                                                     <a href="{% url 'update' item.id %}" ><i class="fa fa-pencil"></i></a>
                                                 </td>
+                                                <td>
+                                                    <a class="media-heading name" href="{% url 'update' item.id %}" >{{ item.nome }} {{ item.sobrenome }}</a>
+                                                </td>
+                                                 <td class="text-center">
+                                                    {{ item.cpf }}
+                                                </td>
+                                                <td class="phone">{{ item.celular }}</td>
+
+                                                <td class="text-center">
+                                                    {{ item.email }}
+                                                </td>
+                                                <td class="Convênio">{{ item.convenio }}</td>
                                             </tr>
                                         {% endfor %}
                                     </table>

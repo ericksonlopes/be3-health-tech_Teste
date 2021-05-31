@@ -55,10 +55,12 @@ def update_pac(request, pk):
 
     else:
         try:
-            if not Paciente.objects.filter(pk=pk, cpf=request.POST['cpf']) and Paciente.objects.filter(cpf=request.POST['cpf']):
+            if not Paciente.objects.filter(pk=pk, cpf=request.POST['cpf']) and \
+                    Paciente.objects.filter(cpf=request.POST['cpf']):
                 raise Exception('Este RG ja existe no sistema!')
 
-            if not Paciente.objects.filter(pk=pk, cpf=request.POST['rg']) and Paciente.objects.filter(cpf=request.POST['rg']):
+            if not Paciente.objects.filter(pk=pk, cpf=request.POST['rg']) and \
+                    Paciente.objects.filter(cpf=request.POST['rg']):
                 raise Exception('Este RG ja existe no sistema!')
 
             if not request.POST['celular'].replace('_', '') or not request.POST['tel_fixo'].replace('_', ''):
