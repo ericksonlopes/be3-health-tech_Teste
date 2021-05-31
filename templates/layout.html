@@ -53,7 +53,7 @@
         <div class="navbar-header">
           <ul class="nav navbar-nav flex-row">
             <li class="nav-item mobile-menu d-lg-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="feather icon-menu font-large-1"></i></a></li>
-            <li class="nav-item mr-auto"><a class="navbar-brand" href="index-2.html"><img class="brand-logo" alt="stack admin logo" src="{% static 'app-assets/images/logo/stack-logo-light.png' %}">
+            <li class="nav-item mr-auto"><a class="navbar-brand" href="{% url 'list' %}"><img class="brand-logo" alt="stack admin logo" src="{% static 'app-assets/images/logo/stack-logo-light.png' %}">
                 <h4 class="brand-text">Helth is love</h4></a></li>
             <li class="nav-item d-none d-lg-block nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="toggle-icon feather icon-toggle-right font-medium-3 white" data-ticon="feather.icon-toggle-right"></i></a></li>
             <li class="nav-item d-lg-none"><a class="nav-link open-navbar-container" data-toggle="collapse" data-target="#navbar-mobile"><i class="fa fa-ellipsis-v"></i></a></li>
@@ -68,7 +68,7 @@
               <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
                   <div class="avatar avatar-online"></div><span class="user-name">Admin</span></a>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="/logout/"><i class="feather icon-power"></i> Logout</a>
+                    <a class="dropdown-item" href="{% url 'logout' %}"><i class="feather icon-power"></i> Logout</a>
                 </div>
               </li>
             </ul>
@@ -140,7 +140,6 @@
     <script src="{% static 'app-assets/js/scripts/forms/extended/form-inputmask.min.js' %}"></script>
     <script src="{% static 'app-assets/js/scripts/forms/extended/form-maxlength.min.js' %}"></script>
     <!-- END: Theme JS-->
-
 
   </body>
   <!-- END: Body-->

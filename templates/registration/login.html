@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+{% load static %}
+<html class="loading" lang="pt-br" data-textdirection="ltr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="Stack admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, stack admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="PIXINVENT">
+    <title>Login - Health is Love</title>
+    <link rel="apple-touch-icon" href="{% static 'app-assets/images/ico/apple-icon-120.png' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'app-assets/images/ico/favicon.ico' %}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/vendors/css/vendors.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/vendors/css/tables/extensions/rowReorder.dataTables.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/vendors/css/tables/extensions/responsive.dataTables.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/vendors/css/forms/icheck/icheck.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/vendors/css/forms/icheck/custom.css' %}">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/bootstrap-extended.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/colors.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/components.min.css' %}">
+    <!-- END: Theme CSS-->
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/core/menu/menu-types/vertical-menu-modern.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/core/colors/palette-gradient.min.css' %}">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+    <!-- END: Custom CSS-->
+
+  </head>
+<!-- BEGIN: Body-->
+  <body class="vertical-layout vertical-menu-modern 1-column  bg-full-screen-image blank-page blank-page" data-open="click" data-menu="vertical-menu-modern" data-col="1-column">
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+      <div class="content-overlay"></div>
+      <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="content-body"><section class="row flexbox-container">
+    <div class="col-12 d-flex align-items-center justify-content-center">
+        <div class="col-lg-4 col-md-8 col-10 box-shadow-2 p-0">
+            <div class="card border-grey border-lighten-3 px-1 py-1 m-0">
+                <div class="card-header border-0">
+                    <div class="card-title text-center">
+                        <img src="{% static 'app-assets/images/logo/stack-logo-dark.png' %}" alt="branding logo">
+                    </div>
+                    <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2"><span>Gerencie seus pacientes</span></h6>
+                </div>
+                <div class="card-content">
+                    <div class="text-center">
+                        <a href="https://www.linkedin.com/in/ericksonlopes/" class="btn btn-social-icon mr-1 mb-1 btn-outline-linkedin"><span
+                                class="fa fa-linkedin font-medium-4"></span></a>
+                        <a href="https://github.com/Erickson-lopes-dev" class="btn btn-social-icon mr-1 mb-1 btn-outline-github"><span
+                                class="fa fa-github font-medium-4"></span></a>
+                    </div>
+                    <p class="card-subtitle line-on-side text-muted text-center font-small-3 mx-2 my-1"><span>OR Using
+                            Account Details</span></p>
+                    <div class="card-body">
+                        <form class="form-horizontal" method="post">
+                            {% csrf_token %}
+                            <fieldset class="form-group position-relative has-icon-left">
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Insira O Nome Do Usuário"
+                                    required>
+                                <div class="form-control-position">
+                                    <i class="feather icon-user"></i>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form-group position-relative has-icon-left">
+                                <input type="password" class="form-control" id="password" name="password"
+                                    placeholder="Insira A Senha Do Usuário" required>
+                                <div class="form-control-position">
+                                    <i class="fa fa-key"></i>
+                                </div>
+                            </fieldset>
+                            <div class="form-group row"></div>
+                            <button type="submit" class="btn btn-outline-primary btn-block"><i
+                                    class="feather icon-unlock"></i> Login</button>
+                        </form>
+                    </div>
+                  <p class="card-subtitle line-on-side text-muted text-center font-small-3 mx-2 my-1"><span>&copy; {% now 'Y' %}</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        </div>
+      </div>
+    </div>
+    <!-- END: Content-->
+
+  </body>
+<!-- END: Body-->
+
