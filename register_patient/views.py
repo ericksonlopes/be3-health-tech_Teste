@@ -12,6 +12,17 @@ class PacienteViewCBV(ListView):
 
 def create_pac(request):
     try:
+        if Paciente.objects.filter(cpf=request.POST['cpf']):
+            raise Exception('Este CPF ja existe no sistema!')
+
+        if Paciente.objects.filter(cpf=request.POST['rg']):
+            raise Exception('Este RG ja existe no sistema!')
+
+        if request.POST['celular'].replace('_', '') or request.POST['tel_fixo'].replace('_', ''):
+            pass
+        else:
+            raise Exception('Ao menos um dos campos entra telefone fixo e celular devem estar preenchido!')
+
         if request.POST:
             Paciente.objects.create(
                 prontuario=request.POST['prontuario'],
@@ -32,8 +43,7 @@ def create_pac(request):
             return render(request, 'create_pac.html', {'save': 'Salvo com sucesso'})
 
     except Exception as err:
-        return render(request, 'create_pac.html', {'error': f'Não foi possivel salvar o novo paciente, Por favor, '
-                                                            f'tente novamente com as informações corretas. {err}'})
+        return render(request, 'create_pac.html', {'error': err})
 
     return render(request, 'create_pac.html')
 

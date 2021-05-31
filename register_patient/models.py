@@ -17,7 +17,7 @@ class Paciente(models.Model):
     rg = models.CharField(max_length=11, verbose_name='CPF', unique=True)
     uf_rg = models.IntegerField(verbose_name='UF do CPF')
 
-    celular = models.CharField(max_length=12, unique=True, verbose_name='Nº telefone celular')
+    celular = models.CharField(max_length=12, verbose_name='Nº telefone celular')
     tel_fixo = models.CharField(max_length=12, verbose_name='Nº telefone fixo')
 
     convenio = models.CharField(max_length=50, choices=CONVENIOS_CHOICES, blank=False, null=False, verbose_name='Convênio')
