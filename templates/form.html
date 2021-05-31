@@ -10,10 +10,9 @@
         <h5>Prontuario
             <small class="text-muted"></small>
         </h5>
-        <input type="text" name='prontuario' id="prontuario" class="contact-name form-control" placeholder="Digite o número do Prontuario">
+        <input type="text" name='prontuario' id="prontuario" class="contact-name form-control" {% if pac %}value="{{ pac.prontuario }}"{% endif %} placeholder="Digite o número do Prontuario">
         <br>
     </fieldset>
-
     <h4 class="form-group col-12"><i class="feather icon-user"></i> Informação pessoal</h4><hr>
 
     <div class="form-group col-10">
@@ -23,7 +22,7 @@
                 <h6>Nome
                     <small class="text-muted"></small>
                 </h6>
-                <input type="text" name='nome' id="nome" class="contact-name form-control" placeholder="Insira o Nome">
+                <input type="text" name='nome' id="nome" class="contact-name form-control" placeholder="Insira o Nome" {% if pac %}value="{{ pac.nome }}"{% endif %}>
             </fieldset>
 
 <!-- sobrenome -->
@@ -31,7 +30,7 @@
                 <h6>Sobrenome
                     <small class="text-muted"></small>
                 </h6>
-                <input type="text" name='sobrenome' id="sobrenome" class="contact-name form-control" placeholder="Insira o Sobrenome">
+                <input type="text" name='sobrenome' id="sobrenome" class="contact-name form-control" placeholder="Insira o Sobrenome" {% if pac %}value="{{ pac.sobrenome }}"{% endif %}>
             </fieldset>
         </div>
     </div>
@@ -46,14 +45,14 @@
                 <h6>CPF
                     <small class="text-muted"></small>
                 </h6>
-                <input name="cpf" class="form-control cpf" type="text" placeholder="Insira o CPF 000.000.000-00">
+                <input name="cpf" class="form-control cpf" type="text" placeholder="Insira o CPF 000.000.000-00" {% if pac %}value="{{ pac.cpf }}"{% endif %}>
             </fieldset>
             <!-- RG-->
             <fieldset class="form-group col-5">
                 <h6>RG
                     <small class="text-muted"></small>
                 </h6>
-                   <input name="rg" class="form-control cpf" type="text" placeholder="Insira o RG, Ex: 00.000.000-00">
+                   <input name="rg" class="form-control" type="text" placeholder="Insira o RG, Ex: 00.000.000-00" {% if pac %}value="{{ pac.rg }}"{% endif %}>
             </fieldset>
 
           <!-- UF do rg-->
@@ -61,7 +60,7 @@
                 <h6>UF do RG
                     <small class="text-muted"></small>
                 </h6>
-                <input type="text" id="uf_rg" name="uf_rg" class="contact-name form-control" placeholder="uf do rg">
+                <input type="text" id="uf_rg" name="uf_rg" class="contact-name form-control" placeholder="uf do rg" {% if pac %}value="{{ pac.uf_rg }}"{% endif %}>
             </fieldset>
         </div>
     </div>
@@ -74,6 +73,7 @@
 
                 <h6>Genero</h6>
                 <select class="form-control" id="genero" name="genero">
+
                     <option>Feminino</option>
                     <option>Masculino</option>
                     <option>Nenhuma das opções</option>
@@ -83,9 +83,9 @@
             <!--  Data de nascimeto -->
             <fieldset class="form-group col-5">
               <h6>Data de nascimento
-                  <small class="text-muted">Dia/Mês/Ano</small>
+                  <small class="text-muted">Dia/Mês/Ano </small >
               </h6>
-              <input type="date" name="data_nasci" id="timesheetinput3" class="form-control">
+              <input type="date" name="data_nasci" id="timesheetinput3" class="form-control" {% if pac %}value="{{ pac.data_nasci|date:"Y-m-d" }}"{% endif %}>
               <br>
             </fieldset>
         </div></div>
@@ -98,7 +98,7 @@
         </h6>
         <div class="form-group">
             <input type="text" name="email" class="form-control email-inputmask" id="email"
-                placeholder="Insira o endereço de e-mail" />
+                placeholder="Insira o endereço de e-mail" {% if pac %}value="{{ pac.email }}"{% endif %}/>
         </div>
     </fieldset>
 
@@ -111,7 +111,7 @@
                 </h6>
                 <div class="form-group">
                     <input type="text" class="form-control optional-inputmask" name="celular" id="optional-mask"
-                        placeholder="Celular - (99) 99999-9999" />
+                        placeholder="Celular - (99) 99999-9999" {% if pac %}value="{{ pac.celular }}"{% endif %} />
                 </div>
             </fieldset>
 
@@ -122,7 +122,7 @@
                 </h6>
                 <div class="form-group">
                     <input type="text" class="form-control optional-inputmask" name="tel_fixo" id="tel_fixo"
-                        placeholder="Tel. Fixo - (99) 99999-9999" />
+                        placeholder="Tel. Fixo - (99) 99999-9999" {% if pac %}value="{{ pac.tel_fixo }}"{% endif %}/>
                 </div>
             </fieldset>
         </div>
@@ -152,7 +152,7 @@
                 <h6>Carteirinha do convênio
                     <small class="text-muted"></small>
                 </h6>
-                <input type="text" id="carteira_convenio" class="contact-name form-control" name="carteira_convenio" placeholder="Carteira do convênio">
+                <input type="text" id="carteira_convenio" class="contact-name form-control" name="carteira_convenio" placeholder="Carteira do convênio" {% if pac %}value="{{ pac.carteira_convenio }}"{% endif %}>
             </fieldset>
 
 <!--  Vencimento da carteira-->
@@ -161,16 +161,10 @@
                     <small class="text-muted">Mês/Ano</small>
                 </h6>
                 <div class="form-group">
-                    <input name="val_carteirinha" class="form-control date-inputmask" type="text" placeholder="Insira a validade da carteira" data-inputmask="'alias': 'datetime','inputFormat': 'mm/yy'">
+                    <input {% if pac %}value="{{ pac.data_nasci|date:"m-y" }}"{% endif %} name="val_carteirinha" class="form-control date-inputmask" type="text" placeholder="Insira a validade da carteira" data-inputmask="'alias': 'datetime','inputFormat': 'mm/yy'">
                 </div>
             </fieldset>
         </div>
     </div>
 </div>
 
-<div class="modal-footer">
-        <fieldset class="form-group position-relative has-icon-left mb-0">
-            <button type="submit" id="add-contact-item" class="btn btn-info add-contact-item" data-dismiss="modal"><i
-                 class="fa fa-paper-plane-o d-block d-lg-none"></i> <span class="d-none d-lg-block">Criar Registro</span></button>
-        </fieldset>
-</div>
