@@ -79,9 +79,10 @@
     <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
       <div class="main-menu-content">
           <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-          <li class=" navigation-header"><span>Menu</span><i class=" feather icon-minus" data-toggle="tooltip" data-placement="right" ></i>
-          <li class="nav-item has-sub open"><a href="{% url 'list' %}"><i class="feather icon-users"></i><span class="menu-title" data-i18n="Dashboard">Pacientes</span></a>
-            <ul class="menu-content">
+              <li class=" navigation-header"><span>Menu</span><i class=" feather icon-minus" data-toggle="tooltip" data-placement="right" ></i>
+              <li class="nav-item"><a href="{% url 'home' %}"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span></a></li>
+              <li class="nav-item has-sub open"><a href="{% url 'list' %}"><i class="feather icon-users"></i><span class="menu-title" data-i18n="Dashboard">Pacientes</span></a>
+              <ul class="menu-content">
               <li><a class="menu-item" href="{% url 'list' %}" data-i18n="eCommerce">Tabela de Pacientes</a></li>
               <li><a class="menu-item" href="{% url 'create' %}" data-i18n="eCommerce">Adicionar Paciente</a></li>
             </ul>

@@ -8,7 +8,7 @@ urlpatterns = [
     path('listagem/', PacienteViewCBV.as_view(), name='list'),
     path('novo/', create_pac, name='create'),
     path('editar/<int:pk>', update_pac, name='update'),
-    path('account/', include('django.contrib.auth.urls')),
+    path('', include('django.contrib.auth.urls')),
     path('', homepage, name='home')
 
 ]
