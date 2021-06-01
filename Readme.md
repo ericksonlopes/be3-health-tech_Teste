@@ -122,8 +122,7 @@ Clique em qualquer um dos lugares indicado,  você será redirecionado para pág
 
 (Redimensionei a tela para melhor visualização )
 
-![image-20210601012039835](![image](https://user-images.githubusercontent.com/62525983/120268046-84389a00-c27b-11eb-804b-a5cbb0003be2.png)
-)
+![image](https://user-images.githubusercontent.com/62525983/120268428-31131700-c27c-11eb-9b1e-5ad51b7bcfc8.png)
 
 ![image](https://user-images.githubusercontent.com/62525983/120268067-8dc20200-c27b-11eb-9f8c-5bd3d0067a98.png)
 
