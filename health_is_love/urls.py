@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 
-from register_patient.views import PacienteViewCBV, create_pac, update_pac
+from register_patient.views import PacienteViewCBV, create_pac, update_pac, homepage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -9,4 +9,6 @@ urlpatterns = [
     path('novo/', create_pac, name='create'),
     path('editar/<int:pk>', update_pac, name='update'),
     path('account/', include('django.contrib.auth.urls')),
+    path('', homepage, name='home')
+
 ]

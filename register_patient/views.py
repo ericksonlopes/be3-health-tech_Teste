@@ -88,3 +88,16 @@ def update_pac(request, pk):
             return render(request, 'update_pac.html', {'error': f'Não foi possivel salvar o novo paciente, Por favor, '
                                                                 f'tente novamente com as informações corretas. {err}',
                                                        'pac': Paciente.objects.get(pk=pk)})
+
+
+def homepage(request):
+    list_conv = ['SulAmérica', 'NotreDame Intermédica', 'Prevent Senior', 'Assim Saúde',
+                 'Central Nacional Unimed (CNU)', 'GreenLine Sistema de Saúde', 'Bradesco Seguros']
+
+    x = [{'qtd': len(Paciente.objects.filter(convenio=conv)),
+          'conv': conv,
+          'porc': f'{(len(Paciente.objects.filter(convenio=conv)) / len(Paciente.objects.all())) * 100:.3}'
+          } for conv in list_conv]
+
+    return render(request, 'home.html', {'len': len(Paciente.objects.all()), 'porc_conv':
+        x})
