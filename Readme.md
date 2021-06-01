@@ -97,33 +97,36 @@ Após, basta clicar no link para ser redirecionado para o navegador
 
 Digite o nome do usuário e senha que foi criado para logar no sistema e clique em login.
 
-<img src="C:\Users\ofcer\AppData\Roaming\Typora\typora-user-images\image-20210601005122235.png" alt="image-20210601005122235" style="zoom: 80%;" />
+![image](https://user-images.githubusercontent.com/62525983/120267817-18eec800-c27b-11eb-8db8-4b5ade93c1fe.png)
+
 
 Ao logar podemos nos deparamos com a dashboard do sistema, onde é possível observar a quantidade total de paciente e estatisticas que demostram a porcentagem que convênio tem referente ao todo.
 
-<img src="C:\Users\ofcer\AppData\Roaming\Typora\typora-user-images\image-20210601005826740.png" alt="image-20210601005826740" style="zoom:67%;" />
+![image](https://user-images.githubusercontent.com/62525983/120267867-32900f80-c27b-11eb-8bc6-ef73534a5203.png)
+
 
 Clique em qualquer um dos lugares indicado,  você será redirecionado para onde se localiza uma lista que armazenará alguns dados dos pacientes para realizar pesquisas.
 
-![image-20210601010608318](C:\Users\ofcer\AppData\Roaming\Typora\typora-user-images\image-20210601010608318.png)
+![image](https://user-images.githubusercontent.com/62525983/120267915-48053980-c27b-11eb-81e0-36d0e5df952e.png)
 
 
 
 Aqui sera exibido a lista com todos os dados disponiveis, onde é possível pelas barras de pesquisa encontrar um paciente digitando qualquer dados da coluna referente ao paciente.
 
-![image-20210601010715546](C:\Users\ofcer\AppData\Roaming\Typora\typora-user-images\image-20210601010715546.png)
-
+![image](https://user-images.githubusercontent.com/62525983/120267959-60755400-c27b-11eb-95d2-0a13bd0b86c0.png)
 
 
 Clique em qualquer um dos lugares indicado,  você será redirecionado para página de adicionar novo registro de paciente
 
-![image-20210601011408856](C:\Users\ofcer\AppData\Roaming\Typora\typora-user-images\image-20210601011408856.png)
+![image](https://user-images.githubusercontent.com/62525983/120268013-75ea7e00-c27b-11eb-9f0e-8c52342647d4.png)
 
 (Redimensionei a tela para melhor visualização )
 
-![image-20210601012039835](C:\Users\ofcer\AppData\Roaming\Typora\typora-user-images\image-20210601012039835.png)
+![image-20210601012039835](![image](https://user-images.githubusercontent.com/62525983/120268046-84389a00-c27b-11eb-804b-a5cbb0003be2.png)
+)
 
-![image-20210601012858702](C:\Users\ofcer\AppData\Roaming\Typora\typora-user-images\image-20210601012858702.png)
+![image](https://user-images.githubusercontent.com/62525983/120268067-8dc20200-c27b-11eb-9f8c-5bd3d0067a98.png)
+
 
 Na lista é possível obter todos os dados do paciente clicando no nome
 
