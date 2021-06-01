@@ -130,25 +130,27 @@ Clique em qualquer um dos lugares indicado,  você será redirecionado para pág
 
 Na lista é possível obter todos os dados do paciente clicando no nome
 
-![image-20210601012902143](C:\Users\ofcer\AppData\Roaming\Typora\typora-user-images\image-20210601012902143.png)
+![image](https://user-images.githubusercontent.com/62525983/120268182-c19d2780-c27b-11eb-86ab-713cf40f48f0.png)
 
-![image-20210601013106090](C:\Users\ofcer\AppData\Roaming\Typora\typora-user-images\image-20210601013106090.png)
+
+![image](https://user-images.githubusercontent.com/62525983/120268231-d5e12480-c27b-11eb-9069-5af0b7252869.png)
 
 
 
 E se caso você deseje editar os dados, temos duas opções para isso !
 
-![image-20210601013201114](C:\Users\ofcer\AppData\Roaming\Typora\typora-user-images\image-20210601013201114.png)
-
+![image](https://user-images.githubusercontent.com/62525983/120268270-e7c2c780-c27b-11eb-87ec-628977a2881d.png)
 
 
 Basta clicar e você sera redirecionado para o formulario, basta alterar os dados e salvar !
 
-![image-20210601013326314](C:\Users\ofcer\AppData\Roaming\Typora\typora-user-images\image-20210601013326314.png)
+![image](https://user-images.githubusercontent.com/62525983/120268316-f6a97a00-c27b-11eb-8de3-0b430c23fc98.png)
+
 
 e se olhar a dashboard, toda ação ja começou a acontecer, possível ver quais convênios os clientes mais usam!
 
-![image-20210601013348249](C:\Users\ofcer\AppData\Roaming\Typora\typora-user-images\image-20210601013348249.png)
+![image](https://user-images.githubusercontent.com/62525983/120268352-045eff80-c27c-11eb-9512-641aa92f1053.png)
+
 
 
 
