@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from register_patient.views import homepage
+from .views import homepage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
