@@ -26,6 +26,7 @@ INSTALLED_APPS = [
 
     # apps
     'register_patient',
+    'appointment'
 ]
 
 MIDDLEWARE = [
