@@ -9,13 +9,13 @@ class PacienteViewCBV(LoginRequiredMixin, ListView):
     model = Paciente
     context_object_name = 'paciente'
     # Template especificado
-    template_name = 'list_pac.html'
+    template_name = 'pacient/list_pac.html'
 
 
 @login_required
 def create_pac(request):
     if request.method == 'GET':
-        return render(request, 'create_pac.html')
+        return render(request, 'pacient/create_pac.html')
 
     try:
         if Paciente.objects.filter(cpf=request.POST['cpf']):
@@ -46,16 +46,16 @@ def create_pac(request):
                 carteira_convenio=request.POST['carteira_convenio'],
                 val_carteirinha=request.POST['val_carteirinha'],
             )
-            return render(request, 'create_pac.html', {'save': 'Salvo com sucesso'})
+            return render(request, 'pacient/create_pac.html', {'save': 'Salvo com sucesso'})
 
     except Exception as err:
-        return render(request, 'create_pac.html', {'error': err})
+        return render(request, 'pacient/create_pac.html', {'error': err})
 
 
 @login_required
 def update_pac(request, pk):
     if request.method == 'GET':
-        return render(request, 'update_pac.html', {'pac': Paciente.objects.get(pk=pk)})
+        return render(request, 'pacient/update_pac.html', {'pac': Paciente.objects.get(pk=pk)})
 
     else:
         try:
@@ -86,12 +86,14 @@ def update_pac(request, pk):
                 carteira_convenio=request.POST['carteira_convenio'],
                 val_carteirinha=request.POST['val_carteirinha'],
             )
-            return render(request, 'update_pac.html', {'save': 'Alteração Salva com sucesso',
-                                                       'pac': Paciente.objects.get(pk=pk)})
+            return render(request, 'pacient/update_pac.html', {'save': 'Alteração Salva com sucesso',
+                                                               'pac': Paciente.objects.get(pk=pk)})
         except Exception as err:
-            return render(request, 'update_pac.html', {'error': f'Não foi possivel salvar o novo paciente, Por favor, '
-                                                                f'tente novamente com as informações corretas. {err}',
-                                                       'pac': Paciente.objects.get(pk=pk)})
+            return render(request, 'pacient/update_pac.html', {'error': f'Não foi possivel salvar o novo paciente, '
+                                                                        f'Por favor, '
+                                                                        f'tente novamente com as informações corretas. '
+                                                                        f'{err}',
+                                                               'pac': Paciente.objects.get(pk=pk)})
 
 
 @login_required
@@ -110,4 +112,4 @@ def homepage(request):
                       'porc': f'{(len(Paciente.objects.filter(convenio=conv)) / len(Paciente.objects.all())) * 100:.4}'
                       } for conv in list_conv]
 
-    return render(request, 'home.html', {'len': len(Paciente.objects.all()), 'porc_conv': porc_conv})
+    return render(request, 'pacient/home.html', {'len': len(Paciente.objects.all()), 'porc_conv': porc_conv})
