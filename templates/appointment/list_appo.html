@@ -14,7 +14,7 @@ Listagem
             </div>
             <div class="card-content collapse show">
                 <div class="card-body">
-                    <div id='fc-bg-events'></div>
+                    <div id='calendario'></div>
                 </div>
             </div>
         </div>
@@ -22,22 +22,28 @@ Listagem
 </div>
 
 <script type="text/javascript">
-    $(document).ready((function(){var t=document.getElementById("fc-bg-events");
-    new FullCalendar.Calendar(t,{header:{left:"prev,next today",center:"title",right:"dayGridMonth,timeGridWeek,timeGridDay"},locale: 'pt-br', buttonText: {
-        today: 'Hoje',
-        month: 'Mês',
-        week: 'Semana',
-        day: 'Hoje',
-        list: 'Lista'
-      },
-    defaultDate:"{{ datenow|date:"Y-m-d" }}",navLinks:!0,businessHours:!0,plugins:["dayGrid","timeGrid","interaction"],editable:!0,events:[
-    {% for item in appo %}
-            {title:"{{ item.pacient }}",start:"{{ item.date|date:"Y-m-d"}}T{{ item.time }}:00", color:"#A52A2A", url:"www.google.com.br"},
-    {% endfor  %}
-]}).render()
-}));
-
-this.Calendar = {}
+    $(document).ready((function(){var t=document.getElementById("calendario");
+    new FullCalendar.Calendar(t,
+    {
+         header:{left:"prev,next today",center:"title",right:"dayGridMonth,timeGridWeek,timeGridDay"},
+         locale: 'pt-br',
+          buttonText: {
+            today: 'Hoje',
+            month: 'Mês',
+            week: 'Semana',
+            day: 'Hoje',
+            list: 'Lista'
+          },
+        defaultDate:"{{ datenow|date:"Y-m-d" }}",
+        navLinks:!0,
+        businessHours:!0,
+        plugins:["dayGrid","timeGrid","interaction"],
+        editable:!0,
+        events:[{% for item in appo %}
+                    {title:"{{ item.pacient }}",start:"{{ item.date|date:"Y-m-d"}}T{{ item.time }}:00", color:"#A52A2A"},
+                {% endfor  %}
+                ]
+    }).render()
+    }));
 </script>
-
 {% endblock %}
