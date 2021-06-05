@@ -58,7 +58,7 @@
         <div class="navbar-header">
           <ul class="nav navbar-nav flex-row">
             <li class="nav-item mobile-menu d-lg-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="feather icon-menu font-large-1"></i></a></li>
-            <li class="nav-item mr-auto"><a class="navbar-brand" href="{% url 'list' %}"><img class="brand-logo" alt="stack admin logo" src="{% static 'app-assets/images/logo/stack-logo-light.png' %}">
+            <li class="nav-item mr-auto"><a class="navbar-brand" href="{% url 'home' %}"><img class="brand-logo" alt="stack admin logo" src="{% static 'app-assets/images/logo/stack-logo-light.png' %}">
                 <h4 class="brand-text">Helth is love</h4></a></li>
             <li class="nav-item d-none d-lg-block nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="toggle-icon feather icon-toggle-right font-medium-3 white" data-ticon="feather.icon-toggle-right"></i></a></li>
             <li class="nav-item d-lg-none"><a class="nav-link open-navbar-container" data-toggle="collapse" data-target="#navbar-mobile"><i class="fa fa-ellipsis-v"></i></a></li>
@@ -90,16 +90,16 @@
               <li class=" navigation-header"><span>Menu</span><i class=" feather icon-minus" data-toggle="tooltip" data-placement="right" ></i>
               <li class="nav-item"><a href="{% url 'home' %}"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span></a></li>
 
-              <li class="nav-item has-sub open"><a href="{% url 'list' %}"><i class="feather icon-users"></i><span class="menu-title" data-i18n="Dashboard">Pacientes</span></a>
+              <li class="nav-item has-sub open"><a href="{% url 'list-pac' %}"><i class="feather icon-users"></i><span class="menu-title" data-i18n="Dashboard">Pacientes</span></a>
               <ul class="menu-content">
-              <li><a class="menu-item" href="{% url 'list' %}" data-i18n="eCommerce">Tabela de Pacientes</a></li>
-              <li><a class="menu-item" href="{% url 'create' %}" data-i18n="eCommerce">Adicionar Paciente</a></li>
+              <li><a class="menu-item" href="{% url 'list-pac' %}" data-i18n="eCommerce">Tabela de Pacientes</a></li>
+              <li><a class="menu-item" href="{% url 'create-pac' %}" data-i18n="eCommerce">Adicionar Paciente</a></li>
             </ul>
 
               <li class="nav-item has-sub open"><a href="{% url 'list-appo' %}"><i class="feather icon-clock"></i><span class="menu-title" data-i18n="Dashboard">Consultas</span></a>
               <ul class="menu-content">
                   <li><a class="menu-item" href="{% url 'list-appo' %}" data-i18n="eCommerce">Visualizar Consultas</a></li>
-                  <li><a class="menu-item" href="{% url 'create' %}" data-i18n="eCommerce">Adicionar consulta</a></li>
+                  <li><a class="menu-item" href="{% url 'create-appo' %}" data-i18n="eCommerce">Adicionar consulta</a></li>
               </ul>
           </ul>
       </div>

@@ -35,7 +35,7 @@ Listagem
                             <div class="card-header">
                                 <h4 class="card-title">Listagem dos Pacientes</h4>
                                 <div class="heading-elements mt-0">
-                                    <a href="{% url 'create' %}"><button class="btn btn-primary btn-md"><i class="d-md-none d-block feather icon-plus white"></i>
+                                    <a href="{% url 'create-pac' %}"><button class="btn btn-primary btn-md"><i class="d-md-none d-block feather icon-plus white"></i>
                                         <span class="d-md-block d-none">Adicionar Paciente</span></button></a>
                                     <button class="btn btn-default btn-sm"><i class="feather icon-settings white"></i></button>
                                 </div>
@@ -62,11 +62,11 @@ Listagem
                                         {% for item in paciente %}
                                             <tr>
                                                 <td>
-                                                    <a href="{% url 'update' item.id %}" ><i class="fa fa-pencil"></i></a>
+                                                    <a href="{% url 'update-pac' item.id %}" ><i class="fa fa-pencil"></i></a>
                                                 </td>
 
                                                 <td>
-                                                    <a class="media-heading name" href="{% url 'update' item.id %}" data-toggle="modal" data-target="#default">
+                                                    <a class="media-heading name" href="{% url 'update-pac' item.id %}" data-toggle="modal" data-target="#default">
                                                         {{ item.nome }} {{ item.sobrenome }}
                                                     </a>
 
@@ -145,7 +145,7 @@ Listagem
                                                           </div>
                                                           <div class="modal-footer">
                                                             <button type="button" class="btn grey btn-outline-secondary" data-dismiss="modal">Close</button>
-                                                            <a href="{% url 'update' item.id %}"><button type="button"  class="btn btn-outline-primary">Editar Dados</button></a>
+                                                            <a href="{% url 'update-pac' item.id %}"><button type="button"  class="btn btn-outline-primary">Editar Dados</button></a>
                                                           </div>
                                                         </div>
                                                       </div>
