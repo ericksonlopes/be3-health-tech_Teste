@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from register_patient.models import Paciente
 from django.contrib.auth.decorators import login_required
-
+from appointment.models import Appointment
 
 @login_required
 def homepage(request):
@@ -19,4 +19,6 @@ def homepage(request):
                       'porc': f'{(len(Paciente.objects.filter(convenio=conv)) / len(Paciente.objects.all())) * 100:.4}'
                       } for conv in list_conv]
 
-    return render(request, 'home.html', {'len': len(Paciente.objects.all()), 'porc_conv': porc_conv})
+    return render(request, 'home.html', {'len_pac': len(Paciente.objects.all()),
+                                         'porc_conv': porc_conv,
+                                         'len_appo': len(Appointment.objects.all())})

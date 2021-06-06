@@ -39,8 +39,12 @@ Listagem
         businessHours:!0,
         plugins:["dayGrid","timeGrid","interaction"],
         editable:!0,
-        events:[{% for item in appo %}
-                    {title:"{{ item.pacient }}",start:"{{ item.date|date:"Y-m-d"}}T{{ item.time }}:00", color:"#A52A2A", url:"{% url 'update-appo' item.id %}"},
+        events:[
+                {% for item in appo %}
+                    {title:"{{ item.pacient }}",
+                    start:"{{ item.date|date:"Y-m-d"}}T{{ item.time }}:00",
+                    color:{% if item.date > datenow %} "#257e4a" {% else %} "#DA4453" {% endif %} ,
+                    url:"{% url 'update-appo' item.id %}"},
                 {% endfor  %}
                 ]
     }).render()

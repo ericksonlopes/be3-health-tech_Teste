@@ -4,25 +4,52 @@
 
 {% block content %}
 
-<div class="col-xl-3 col-sm-6 col-12">
-	<a href="{% url 'list-pac' %}">
-  <div class="card bg-gradient-directional-success">
-	<div class="card-content">
-	  <div class="card-body">
-		<div class="media d-flex">
-		  <div class="media-body white text-left">
-			<h3>{{ len }}</h3>
-			<span>Total Pacientes</span>
+<div class="row">
+    <div class="col-xl-3 col-sm-6 col-12">
+		<a href="{% url 'list-pac' %}">
+		  <div class="card bg-gradient-directional-success">
+			<div class="card-content">
+			  <div class="card-body">
+				<div class="media d-flex">
+				  <div class="media-body white text-left">
+					<h3>{{ len_pac }}</h3>
+					<span>Total de Pacientes</span>
+				  </div>
+				  <div class="align-self-center">
+					<i class="icon-user white font-large-2 float-right"></i>
+				  </div>
+				</div>
+			  </div>
+			</div>
+
 		  </div>
-		  <div class="align-self-center">
-			<i class="icon-user white font-large-2 float-right"></i>
-		  </div>
-		</div>
-	  </div>
-	</div>
-  </div>
 		</a>
-</div>
+	</div>
+
+    <div class="col-xl-3 col-sm-6 col-12">
+		<a href="{% url 'list-appo' %}">
+		  <div class="card bg-gradient-directional-success">
+			<div class="card-content">
+			  <div class="card-body">
+				<div class="media d-flex">
+				  <div class="media-body white text-left">
+					<h3>{{ len_appo }}</h3>
+					<span>Total De Consultas</span>
+				  </div>
+				  <div class="align-self-center">
+					<i class="icon-clock white font-large-2 float-right"></i>
+				  </div>
+				</div>
+			  </div>
+			</div>
+
+		  </div>
+		</a>
+	</div>
+
+
+  </div>
+
 
 <section id="basic-progress">
 	<div class="row">
