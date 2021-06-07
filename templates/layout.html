@@ -34,10 +34,18 @@
     <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/core/menu/menu-types/vertical-menu-modern.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/core/colors/palette-gradient.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/pages/app-contacts.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/vendors/css/vendors.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/vendors/css/calendars/fullcalendar.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/vendors/css/calendars/daygrid.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/vendors/css/calendars/timegrid.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/core/colors/palette-gradient.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/plugins/calendars/fullcalendar.min.css' %}">
 
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
 
-
+    <!-- BEGIN: Vendor JS-->
+    <script src="{% static 'app-assets/vendors/js/vendors.min.js' %}"></script>
+    <!-- BEGIN Vendor JS-->
   </head>
   <!-- END: Head-->
 
@@ -88,9 +96,9 @@
               <li><a class="menu-item" href="{% url 'create' %}" data-i18n="eCommerce">Adicionar Paciente</a></li>
             </ul>
 
-              <li class="nav-item has-sub open"><a href="{% url 'list' %}"><i class="feather icon-clock"></i><span class="menu-title" data-i18n="Dashboard">Consultas</span></a>
+              <li class="nav-item has-sub open"><a href="{% url 'list-appo' %}"><i class="feather icon-clock"></i><span class="menu-title" data-i18n="Dashboard">Consultas</span></a>
               <ul class="menu-content">
-                  <li><a class="menu-item" href="{% url 'list' %}" data-i18n="eCommerce">Visualizar Consultas</a></li>
+                  <li><a class="menu-item" href="{% url 'list-appo' %}" data-i18n="eCommerce">Visualizar Consultas</a></li>
                   <li><a class="menu-item" href="{% url 'create' %}" data-i18n="eCommerce">Adicionar consulta</a></li>
               </ul>
           </ul>
@@ -111,11 +119,6 @@
     <footer class="footer footer-static footer-light navbar-border">
     </footer>
     <!-- END: Footer-->
-
-
-    <!-- BEGIN: Vendor JS-->
-    <script src="{% static 'app-assets/vendors/js/vendors.min.js' %}"></script>
-    <!-- BEGIN Vendor JS-->
 
     <!-- BEGIN: Page Vendor JS-->
     <script src="{% static 'app-assets/vendors/js/tables/jquery.dataTables.min.js' %}"></script>
@@ -138,6 +141,11 @@
     <script src="{% static 'app-assets/js/scripts/forms/extended/form-typeahead.min.js' %}"></script>
     <script src="{% static 'app-assets/js/scripts/forms/extended/form-inputmask.min.js' %}"></script>
     <script src="{% static 'app-assets/js/scripts/forms/extended/form-maxlength.min.js' %}"></script>
+    <script src="{% static 'app-assets/vendors/js/extensions/moment.min.js' %}"></script>
+    <script src="{% static 'app-assets/vendors/js/extensions/fullcalendar.min.js' %}"></script>
+    <script src="{% static 'app-assets/vendors/js/extensions/daygrid.min.js' %}"></script>
+    <script src="{% static 'app-assets/vendors/js/extensions/timegrid.min.js' %}"></script>
+    <script src="{% static 'app-assets/vendors/js/extensions/interactions.min.js' %}"></script>
     <!-- END: Theme JS-->
 
   </body>

@@ -4,7 +4,9 @@ from .views import homepage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('django.contrib.auth.urls')),
     path('', homepage, name='home'),
-    path('', include('register_patient.urls'))
+
+    path('', include('django.contrib.auth.urls')),
+    path('', include('register_patient.urls')),
+    path('', include('appointment.urls'))
 ]

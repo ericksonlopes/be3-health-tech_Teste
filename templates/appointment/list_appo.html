@@ -5,343 +5,40 @@ Listagem
 {% endblock %}
 
 {% block content %}
-    <div class="content-detached content-center">
-      <div class="content-body"><div class="content-overlay"></div>
-          <section class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="bug-list-search">
-                                <div class="bug-list-search-content">
-                                    <div class="sidebar-toggle d-block d-lg-none"><i class="feather icon-menu font-large-1"></i></div>
-                                    <form action="#">
-                                        <div class="position-relative">
-                                            <input type="search" id="search-contacts" class="form-control" placeholder="Procurar por paciente...">
-                                            <div class="form-control-position">
-                                                <i class="fa fa-search text-size-base text-muted la-rotate-270"></i>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Default</h4>
+                    <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="feather icon-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="feather icon-rotate-cw"></i></a></li>
+                            <li><a data-action="close"><i class="feather icon-x"></i></a></li>
+                        </ul>
                     </div>
                 </div>
-            </section>
-          <section class="row all-contacts">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-head">
-                            <div class="card-header">
-                                <h4 class="card-title">Listagem dos Pacientes</h4>
-                                <div class="heading-elements mt-0">
-                                    <a href="{% url 'create' %}"><button class="btn btn-primary btn-md"><i class="d-md-none d-block feather icon-plus white"></i>
-                                        <span class="d-md-block d-none">Adicionar Paciente</span></button></a>
-                                    <div class="modal fade" id="AddContactModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <section class="contact-form">
-                                                    <form id="form-add-contact" class="contact-input">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel1">Adicionar Novo Paciente</h5>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-
-                                                        <div class="modal-body">
-<!--                                                            Prontuario-->
-                                                            <fieldset class="form-group col-12">
-                                                                <input type="text" id="prontuario" class="contact-name form-control" placeholder="Digite o número do Prontuario">
-                                                            </fieldset>
-
-                                                            <h4 class="form-group col-12"><i class="feather icon-user"></i> Informação pessoal</h4>
-
-                                                            <div class="form-group col-12">
-                                                                <div class="row">
-        <!--                                                            Nome-->
-                                                                    <fieldset class="form-group col-6">
-                                                                        <h6>Nome
-                                                                            <small class="text-muted"></small>
-                                                                        </h6>
-                                                                        <input type="text" id="nome" class="contact-name form-control" placeholder="Insira o Nome">
-                                                                    </fieldset>
-
-        <!--                                                            sobrenome-->
-                                                                    <fieldset class="form-group col-6">
-                                                                        <h6>Sobrenome
-                                                                            <small class="text-muted"></small>
-                                                                        </h6>
-                                                                        <input type="text" id="sobrenome" class="contact-name form-control" placeholder="Insira o Sobrenome">
-                                                                    </fieldset>
-                                                                </div>
-                                                            </div>
-
-<!--                                                            CPF-->
-                                                            <fieldset class="form-group col-12">
-                                                                <h6>CPF
-                                                                    <small class="text-muted"></small>
-                                                                </h6>
-
-                                                                   <input name="cpf" class="form-control cpf" type="text" placeholder="Insira o CPF 000.000.000-00">
-
-                                                            </fieldset>
-
-<!--                                                            RG e CPF + uf-->
-                                                            <div class="form-group col-12">
-                                                                <div class="row">
-        <!--                                                            RG-->
-                                                                    <fieldset class="form-group col-8">
-                                                                        <h6>RG
-                                                                            <small class="text-muted"></small>
-                                                                        </h6>
-                                                                        <div class="form-group">
-                                                                           <input name="cpf" class="form-control cpf" type="text" placeholder="Insira o RG, Ex: 00.000.000-00">
-                                                                        </div>
-                                                                    </fieldset>
-
-        <!--                                                            UF do rg-->
-                                                                    <fieldset class="form-group col-4">
-                                                                        <h6>UF do RG
-                                                                            <small class="text-muted"></small>
-                                                                        </h6>
-                                                                        <input type="text" id="uf_rg" class="contact-name form-control" placeholder="uf do rg">
-                                                                    </fieldset>
-                                                                </div>
-                                                            </div>
-
-<!--                                                            Data de nascimeto -->
-                                                            <fieldset class="form-group col-12">
-                                                                <h6>Data de nascimento
-                                                                    <small class="text-muted">Dia/Mês/Ano</small>
-                                                                </h6>
-
-                                                                    <input type="date" id="timesheetinput3" class="form-control" name="date">
-
-                                                            </fieldset>
-
-                                                            <h4 class="form-group col-11"><i class="feather icon-mail"></i>Informação de contato</h4>
-<!--                                                            Email-->
-                                                            <fieldset class="form-group col-12">
-                                                                <h6>Email
-                                                                    <small class="text-muted">exemplo@gmail.com</small>
-                                                                </h6>
-                                                                <div class="form-group">
-                                                                    <input type="text" class="form-control email-inputmask" id="email"
-                                                                        placeholder="Insira o endereço de e-mail" />
-                                                                </div>
-                                                            </fieldset>
-
-                                                            <div class="form-group col-12">
-                                                                <div class="row">
-<!--                                                                Celular -->
-                                                                    <fieldset class="form-group col-6">
-                                                                        <h6>Celular
-                                                                            <small class="text-muted">(99) 99999-9999</small>
-                                                                        </h6>
-                                                                        <div class="form-group">
-                                                                            <input type="text" class="form-control optional-inputmask" id="optional-mask"
-                                                                                placeholder="Celular - (99) 99999-9999" />
-                                                                        </div>
-                                                                    </fieldset>
-
-        <!--                                                        Fixo -->
-                                                                    <fieldset class="form-group col-6">
-                                                                        <h6>Tel. Fixo
-                                                                            <small class="text-muted">(99) 99999-9999</small>
-                                                                        </h6>
-                                                                        <div class="form-group">
-                                                                            <input type="text" class="form-control optional-inputmask" id="tel_fixo"
-                                                                                placeholder="Tel. Fixo - (99) 99999-9999" />
-                                                                        </div>
-                                                                    </fieldset>
-                                                                </div>
-                                                            </div>
-
-                                                            <h4 class="form-group col-12"><i class="fa fa-paperclip"></i> Convênio</h4>
-<!--                                                            Convenio-->
-                                                            <fieldset class="form-group col-12">
-                                                                <select class="form-control" id="convenio">
-                                                                    <option>Selecione Um Convênio</option>
-                                                                    <option>SulAmérica</option>
-                                                                    <option>NotreDame Intermédica</option>
-                                                                    <option>Prevent Senior</option>
-                                                                    <option>Assim Saúde</option>
-                                                                    <option>Central Nacional Unimed (CNU)</option>
-                                                                    <option>GreenLine Sistema de Saúde</option>
-                                                                    <option>Bradesco Seguros</option>
-                                                                    <option>Hapvida Saúde</option>
-
-                                                                </select>
-                                                            </fieldset>
-
-                                                            <div class="form-group col-12">
-                                                                <div class="row">
-        <!--                                                            Carteira convenio-->
-                                                                    <fieldset class="form-group col-6">
-                                                                        <h6>Carteirinha do convênio
-                                                                            <small class="text-muted"></small>
-                                                                        </h6>
-                                                                        <input type="text" id="carteira_convenio" class="contact-name form-control" placeholder="Carteira do convênio">
-                                                                    </fieldset>
-
-        <!--                                                            Vencimento da carteira-->
-                                                                    <fieldset class="form-group col-6">
-                                                                        <h6>Val. da Carteirinha
-                                                                            <small class="text-muted">Mês/Ano</small>
-                                                                        </h6>
-                                                                        <div class="form-group">
-                                                                            <input name="dateMask" class="form-control date-inputmask" type="text" placeholder="Insira a validade da carteira" data-inputmask="'alias': 'datetime','inputFormat': 'mm/yy'">
-                                                                        </div>
-                                                                    </fieldset>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <fieldset class="form-group position-relative has-icon-left mb-0">
-                                                                <button type="button" id="add-contact-item" class="btn btn-info add-contact-item" data-dismiss="modal"><i
-                                                                     class="fa fa-paper-plane-o d-block d-lg-none"></i> <span class="d-none d-lg-block">Criar Registro</span></button>
-                                                            </fieldset>
-                                                        </div>
-                                                    </form>
-                                                </section>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <button class="btn btn-default btn-sm"><i class="feather icon-settings white"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <div class="card-body">
-                                <!-- Task List table -->
-
-                                <div class="table-responsive">
-                                    <table id="users-contacts" class="table table-white-space table-bordered row-grouping display no-wrap icheck table-middle text-center">
-                                        <thead>
-                                            <tr>
-                                                <th>Editar</th>
-                                                <th>Nome</th>
-                                                <th>CPF</th>
-                                                <th>Celular</th>
-                                                <th>Email</th>
-                                                <th>Convênio</th>
-
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        {% for item in paciente %}
-                                            <tr>
-                                                <td>
-                                                    <a href="{% url 'update' item.id %}" ><i class="fa fa-pencil"></i></a>
-                                                </td>
-
-                                                <td>
-                                                    <a class="media-heading name" href="{% url 'update' item.id %}" data-toggle="modal" data-target="#default">
-                                                        {{ item.nome }} {{ item.sobrenome }}
-                                                    </a>
-
-                                                    <div class="modal fade text-left" id="default" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
-                                                      <div class="modal-dialog" role="document">
-                                                        <div class="modal-content">
-                                                          <div class="modal-header">
-                                                            <h4 class="modal-title" id="myModalLabel1">{{ item.nome }} {{ item.sobrenome }}</h4>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                              <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                          </div>
-                                                          <div class="modal-body">
-                                                            <div class="card-body">
-                                                            <div class="row">
-                                                              <div class="col-12 col-md-4">
-                                                                <table class="table table-borderless">
-                                                                  <tbody>
-                                                                    <tr>
-                                                                      <td>Pronturario:</td>
-                                                                      <td>{{ item.prontuario }}</td>
-                                                                    </tr>
-                                                                  <tr>
-                                                                      <td>Email:</td>
-                                                                      <td>{{ item.email }}</td>
-                                                                    </tr>
-                                                                  <tr>
-                                                                      <td>Data de Nascimento:</td>
-                                                                      <td>{{ item.data_nasci }}</td>
-                                                                    </tr>
-                                                                  <tr>
-                                                                      <td>Genêro:</td>
-                                                                      <td>{{ item.genero }}</td>
-                                                                    </tr>
-                                                                  <tr>
-                                                                      <td>CPF:</td>
-                                                                      <td>{{ item.cpf }}</td>
-                                                                    </tr>
-                                                                  <tr>
-                                                                      <td>RG:</td>
-                                                                      <td>{{ item.rg }}</td>
-                                                                    </tr>
-                                                                  <tr>
-                                                                      <td>UF fo RG:</td>
-                                                                      <td>{{ item.uf_rg }}</td>
-                                                                    </tr>
-                                                                  <tr>
-                                                                      <td>Celular:</td>
-                                                                      <td>{{ item.celular }}</td>
-                                                                    </tr>
-                                                                  <tr>
-                                                                      <td>Telefone Fixo:</td>
-                                                                      <td>{{ item.tel_fixo }}</td>
-                                                                    </tr>
-                                                                  <tr>
-                                                                      <td>Convênio:</td>
-                                                                      <td>{{ item.convenio }}</td>
-                                                                    </tr>
-                                                                  <tr>
-                                                                      <td>Carteira Do Convênio:</td>
-                                                                      <td>{{ item.carteira_convenio }}</td>
-                                                                    </tr>
-                                                                  <tr>
-                                                                      <td>Validade Da Carteira:</td>
-                                                                      <td>{{ item.val_carteirinha }}</td>
-                                                                    </tr>
-
-                                                                  </tbody>
-                                                                </table>
-                                                              </div>
-                                                              <div class="col-12 col-md-8">
-
-                                                              </div>
-                                                            </div>
-                                                          </div>
-                                                          </div>
-                                                          <div class="modal-footer">
-                                                            <button type="button" class="btn grey btn-outline-secondary" data-dismiss="modal">Close</button>
-                                                            <a href="{% url 'update' item.id %}"><button type="button"  class="btn btn-outline-primary">Editar Dados</button></a>
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                                      </div>
-                                                </td>
-
-                                                 <td class="text-center">
-                                                    {{ item.cpf }}
-                                                </td>
-                                                <td class="phone">{{ item.celular }}</td>
-
-                                                <td class="text-center">
-                                                    {{ item.email }}
-                                                </td>
-                                                <td class="Convênio">{{ item.convenio }}</td>
-                                            </tr>
-                                        {% endfor %}
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
+                <div class="card-content collapse show">
+                    <div class="card-body">
+                        <p class="card-text">This is the most basic example having navigation button to navigate next and previous months and today button. This basic example lists all the events on the calendar.</p>
+                        <div id='fc-default'></div>
                     </div>
                 </div>
-            </section>
-      </div>
- </div>
+            </div>
+        </div>
+    </div>
+  <script type="text/javascript">
+    $(document).ready((function(){var t=document.getElementById("fc-default");
+    new FullCalendar.Calendar(t,{defaultDate:"2021-06-03",editable:!0,plugins:["dayGrid","interaction"],eventLimit:!0,events:[
+        {% for item in appo %}
+            {title:"{{ item.pacient }}",start:"{{ item.date|date:"Y-m-d" }}"},
+        {% endfor  %}
+    ]}).render()}));
+
+</script>
+
 {% endblock %}
+
+<!--defaultDate:"2016-06-12",editable:!0,plugins:["dayGrid","timeGrid","interaction"],eventLimit:!0,events:[{title:"All Day Event",start:"2016-06-01"},{title:"Long Event",start:"2016-06-07",end:"2016-06-10"},{id:999,title:"Repeating Event",start:"2016-06-09T16:00:00"},{id:999,title:"Repeating Event",start:"2016-06-16T16:00:00"},{title:"Conference",start:"2016-06-11",end:"2016-06-13"},{title:"Meeting",start:"2016-06-12T10:30:00",end:"2016-06-12T12:30:00"},{title:"Lunch",start:"2016-06-12T12:00:00"},{title:"Meeting",start:"2016-06-12T14:30:00"},{title:"Happy Hour",start:"2016-06-12T17:30:00"},{title:"Dinner",start:"2016-06-12T20:00:00"},{title:"Birthday Party",start:"2021-06-06T07:00:00"},{title:"Click for Google",url:"http://google.com/",start:"2016-06-28"}-->
