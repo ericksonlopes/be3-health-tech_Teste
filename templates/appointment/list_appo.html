@@ -5,40 +5,39 @@ Listagem
 {% endblock %}
 
 {% block content %}
-
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Default</h4>
-                    <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
-                    <div class="heading-elements">
-                        <ul class="list-inline mb-0">
-                            <li><a data-action="collapse"><i class="feather icon-minus"></i></a></li>
-                            <li><a data-action="reload"><i class="feather icon-rotate-cw"></i></a></li>
-                            <li><a data-action="close"><i class="feather icon-x"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card-content collapse show">
-                    <div class="card-body">
-                        <p class="card-text">This is the most basic example having navigation button to navigate next and previous months and today button. This basic example lists all the events on the calendar.</p>
-                        <div id='fc-default'></div>
-                    </div>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Agenda de consultas</h4>
+                <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+            </div>
+            <div class="card-content collapse show">
+                <div class="card-body">
+                    <div id='fc-bg-events'></div>
                 </div>
             </div>
         </div>
     </div>
-  <script type="text/javascript">
-    $(document).ready((function(){var t=document.getElementById("fc-default");
-    new FullCalendar.Calendar(t,{defaultDate:"2021-06-03",editable:!0,plugins:["dayGrid","interaction"],eventLimit:!0,events:[
-        {% for item in appo %}
-            {title:"{{ item.pacient }}",start:"{{ item.date|date:"Y-m-d" }}"},
-        {% endfor  %}
-    ]}).render()}));
+</div>
 
+<script type="text/javascript">
+    $(document).ready((function(){var t=document.getElementById("fc-bg-events");
+    new FullCalendar.Calendar(t,{header:{left:"prev,next today",center:"title",right:"dayGridMonth,timeGridWeek,timeGridDay"},locale: 'pt-br', buttonText: {
+        today: 'Hoje',
+        month: 'Mês',
+        week: 'Semana',
+        day: 'Hoje',
+        list: 'Lista'
+      },
+    defaultDate:"{{ datenow|date:"Y-m-d" }}",navLinks:!0,businessHours:!0,plugins:["dayGrid","timeGrid","interaction"],editable:!0,events:[
+    {% for item in appo %}
+            {title:"{{ item.pacient }}",start:"{{ item.date|date:"Y-m-d"}}T{{ item.time }}:00", color:"#A52A2A", url:"www.google.com.br"},
+    {% endfor  %}
+]}).render()
+}));
+
+this.Calendar = {}
 </script>
 
 {% endblock %}
-
-<!--defaultDate:"2016-06-12",editable:!0,plugins:["dayGrid","timeGrid","interaction"],eventLimit:!0,events:[{title:"All Day Event",start:"2016-06-01"},{title:"Long Event",start:"2016-06-07",end:"2016-06-10"},{id:999,title:"Repeating Event",start:"2016-06-09T16:00:00"},{id:999,title:"Repeating Event",start:"2016-06-16T16:00:00"},{title:"Conference",start:"2016-06-11",end:"2016-06-13"},{title:"Meeting",start:"2016-06-12T10:30:00",end:"2016-06-12T12:30:00"},{title:"Lunch",start:"2016-06-12T12:00:00"},{title:"Meeting",start:"2016-06-12T14:30:00"},{title:"Happy Hour",start:"2016-06-12T17:30:00"},{title:"Dinner",start:"2016-06-12T20:00:00"},{title:"Birthday Party",start:"2021-06-06T07:00:00"},{title:"Click for Google",url:"http://google.com/",start:"2016-06-28"}-->
