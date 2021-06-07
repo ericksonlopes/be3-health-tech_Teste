@@ -27,16 +27,16 @@
 
   <div class="col-md-11 mx-auto">
     <div class="card">
-      <form method="post" action="{% url 'create-appo' %}">
+      <form method="post" action="{% url 'create-appo' pac.id %}">
         <div class="modal-header">
-            <h3 class="modal-title" id="exampleModalLabel1">Criar Novo Registro De Paciente</h3>
+            <h3 class="modal-title" id="exampleModalLabel1">Criar consulta para {{ pac.nome }} {{ pac.sobrenome }}</h3>
         </div>
-        {% include 'pacient/form.html' %}
+        {% include 'appointment/form_appo.html' %}
 
         <div class="modal-footer">
         <fieldset class="form-group position-relative has-icon-left mb-0">
             <button type="submit" class="btn btn-info add-contact-item" data-dismiss="modal"><i
-                 class="fa fa-paper-plane-o d-block d-lg-none"></i> Criar registro</button>
+                 class="fa fa-paper-plane-o d-block d-lg-none"></i> Criar Consulta</button>
         </fieldset>
 </div>
      </form>

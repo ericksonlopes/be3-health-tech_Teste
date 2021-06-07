@@ -62,7 +62,8 @@ Listagem
                                         {% for item in paciente %}
                                             <tr>
                                                 <td>
-                                                    <a href="{% url 'update-pac' item.id %}" ><i class="fa fa-pencil"></i></a>
+                                                    <a href="{% url 'update-pac' item.id %}" ><i class="fa fa-pencil-square-o"></i></a>
+                                                    <a href="{% url 'create-appo' item.id %}" ><i class="fa fa-stethoscope"></i></a>
                                                 </td>
 
                                                 <td>
