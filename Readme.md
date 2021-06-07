@@ -124,7 +124,6 @@ Clique em qualquer um dos lugares indicado,  você será redirecionado para pág
 
 ![image](https://user-images.githubusercontent.com/62525983/120268428-31131700-c27c-11eb-9b1e-5ad51b7bcfc8.png)
 
-![image](https://user-images.githubusercontent.com/62525983/120268067-8dc20200-c27b-11eb-9f8c-5bd3d0067a98.png)
 
 
 Na lista é possível obter todos os dados do paciente clicando no nome
