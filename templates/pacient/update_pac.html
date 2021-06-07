@@ -9,7 +9,7 @@
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
           </button>
-          <strong>{{ save }}, <a class="media-heading name" href="{% url 'list-appo' %}">Visualizar na tabela</a></strong>
+          <strong>{{ save }}, <a class="media-heading name" href="{% url 'list-pac' %}">Visualizar na tabela</a></strong>
       </div>
     </div>
   {% endif %}
@@ -27,7 +27,7 @@
 
   <div class="col-md-11 mx-auto">
     <div class="card">
-      <form method="post" action="{% url 'update-appo' pac.pk %}">
+      <form method="post" action="{% url 'update-pac' pac.pk %}">
           <div class="modal-header">
             <h3 class="modal-title" id="exampleModalLabel1">Atualizar Dados Do Paciente</h3>
           </div>
