@@ -7,7 +7,13 @@
         <h5>Nome do Doutor
             <small class="text-muted"></small>
         </h5>
-        <input type="text" name='doctorName' id="doctorName" class="contact-name form-control" {% if appo %}value="{{ appo.doctorName }}"{% endif %} placeholder="Digite o nome do Doutor">
+        <select class="form-control" id="doctorName" name="doctorName">
+            {% if doctor %}<option>{{ doctor.convenio }}</option>{% endif %}
+
+            {% for con in dc %}
+                <option>{{ con.name }}</option>
+            {% endfor %}
+        </select>
         <br>
     </fieldset>
     <h4 class="form-group col-12"><i class="feather icon-user"></i> Informação pessoal</h4><hr>

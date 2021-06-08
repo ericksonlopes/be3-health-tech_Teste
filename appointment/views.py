@@ -3,12 +3,13 @@ from django.shortcuts import render
 from appointment.models import Appointment
 from datetime import date
 from register_patient.models import Paciente
-
+from doctor.models import Doctor
 
 @login_required
 def create_appo(request, pk):
     if request.method == 'GET':
-        return render(request, 'appointment/create_appo.html', {'pac': Paciente.objects.get(pk=pk)})
+        return render(request, 'appointment/create_appo.html', {'pac': Paciente.objects.get(pk=pk),
+                                                                'dc': Doctor.objects.all()})
     try:
         if request.POST:
             Appointment.objects.create(
