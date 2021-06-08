@@ -1,0 +1,15 @@
+{% csrf_token %}
+
+<div class="modal-body">
+<!-- Prontuario -->
+    <fieldset class="form-group col-6">
+        <br>
+        <h5>Nome
+            <small class="text-muted"></small>
+        </h5>
+        <input type="text" name='name' id="name" class="contact-name form-control" {% if hi %}value="{{ hi.name }}"{% endif %} placeholder="Digite o nome do convênio...">
+        <br>
+    </fieldset>
+
+</div>
+
