@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Convênios
+{% endblock %}
+
+{% block content %}
+    <div class="content-detached content-center">
+      <div class="content-body"><div class="content-overlay"></div>
+          <section class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="bug-list-search">
+                                <div class="bug-list-search-content">
+                                    <div class="sidebar-toggle d-block d-lg-none"><i class="feather icon-menu font-large-1"></i></div>
+                                    <form action="#">
+                                        <div class="position-relative">
+                                            <input type="search" id="search-contacts" class="form-control" placeholder="Procurar por Convênios...">
+                                            <div class="form-control-position">
+                                                <i class="fa fa-search text-size-base text-muted la-rotate-270"></i>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          <section class="row all-contacts">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-head">
+                            <div class="card-header">
+                                <h4 class="card-title">Listagem dos Convênios</h4>
+                                <div class="heading-elements mt-0">
+                                    <a href="{% url 'create-pac' %}"><button class="btn btn-primary btn-md"><i class="d-md-none d-block feather icon-plus white"></i>
+                                        <span class="d-md-block d-none">Adicionar Convênio</span></button></a>
+                                    <button class="btn btn-default btn-sm"><i class="feather icon-settings white"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body">
+                                <!-- Task List table -->
+
+                                <div class="table-responsive">
+                                    <table id="users-contacts" class="table table-white-space table-bordered row-grouping display no-wrap icheck table-middle text-center">
+                                        <thead>
+                                            <tr>
+                                                <th>Editar</th>
+                                                <th>Nome</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for item in hi %}
+                                            <tr>
+                                                <td>
+                                                    <a href="{% url 'update-pac' item.id %}" ><i class="fa fa-pencil-square-o"></i></a>
+                                                </td>
+                                                <td class="name">{{ item.name }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+      </div>
+ </div>
+{% endblock %}

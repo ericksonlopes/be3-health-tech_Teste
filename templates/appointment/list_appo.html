@@ -9,7 +9,7 @@ Listagem
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Agenda de consultas</h4>
+                <h4 class="card-title">CALENDARIO de consultas</h4>
                 <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
             </div>
             <div class="card-content collapse show">
@@ -43,7 +43,7 @@ Listagem
                 {% for item in appo %}
                     {title:"{{ item.pacient }}",
                     start:"{{ item.date|date:"Y-m-d"}}T{{ item.time }}:00",
-                    color:{% if item.date > datenow %} "#257e4a" {% else %} "#DA4453" {% endif %} ,
+                    color:{% if item.date > datenow %} "#257e4a" {% elif item.date == datenow %} "#FF7F50" {% else %} "#696969" {% endif %} ,
                     url:"{% url 'update-appo' item.id %}"},
                 {% endfor  %}
                 ]

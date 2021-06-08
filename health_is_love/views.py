@@ -2,6 +2,8 @@ from django.shortcuts import render
 from register_patient.models import Paciente
 from django.contrib.auth.decorators import login_required
 from appointment.models import Appointment
+from datetime import date
+
 
 @login_required
 def homepage(request):
