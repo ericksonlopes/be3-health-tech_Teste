@@ -130,18 +130,14 @@
 <!--   Convenio-->
     <fieldset class="form-group col-10">
         <h6>Selecione um Convênio
-                    <small class="text-muted">(99) 99999-9999</small>
-                </h6>
+            <small class="text-muted">(99) 99999-9999</small>
+        </h6>
         <select class="form-control" id="convenio" name="convenio">
             {% if pac %}<option>{{ pac.convenio }}</option>{% endif %}
             <option></option>
-            <option>SulAmérica</option>
-            <option>NotreDame Intermédica</option>
-            <option>Prevent Senior</option>
-            <option>Assim Saúde</option>
-            <option>Central Nacional Unimed (CNU)</option>
-            <option>GreenLine Sistema de Saúde</option>
-            <option>Bradesco Seguros</option>
+            {% for con in conv %}
+                <option>{{ con.name }}</option>
+            {% endfor %}
         </select>
     </fieldset>
 

@@ -3,6 +3,7 @@ from django.views.generic import ListView
 from register_patient.models import Paciente
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from health_insurance.models import HealthInsurance
 
 
 class PacienteViewCBV(LoginRequiredMixin, ListView):
@@ -15,7 +16,7 @@ class PacienteViewCBV(LoginRequiredMixin, ListView):
 @login_required
 def create_pac(request):
     if request.method == 'GET':
-        return render(request, 'pacient/create_pac.html')
+        return render(request, 'pacient/create_pac.html', {'conv': HealthInsurance.objects.all()})
 
     try:
         if Paciente.objects.filter(cpf=request.POST['cpf']):
@@ -46,16 +47,17 @@ def create_pac(request):
                 carteira_convenio=request.POST['carteira_convenio'],
                 val_carteirinha=request.POST['val_carteirinha'],
             )
-            return render(request, 'pacient/create_pac.html', {'save': 'Salvo com sucesso'})
+            return render(request, 'pacient/create_pac.html', {'save': 'Salvo com sucesso', 'conv': HealthInsurance.objects.all()})
 
     except Exception as err:
-        return render(request, 'pacient/create_pac.html', {'error': err})
+        return render(request, 'pacient/create_pac.html', {'error': err, 'conv': HealthInsurance.objects.all()})
 
 
 @login_required
 def update_pac(request, pk):
     if request.method == 'GET':
-        return render(request, 'pacient/update_pac.html', {'pac': Paciente.objects.get(pk=pk)})
+        return render(request, 'pacient/update_pac.html', {'pac': Paciente.objects.get(pk=pk),
+                                                           'conv': HealthInsurance.objects.all()})
 
     else:
         try:
@@ -87,13 +89,12 @@ def update_pac(request, pk):
                 val_carteirinha=request.POST['val_carteirinha'],
             )
             return render(request, 'pacient/update_pac.html', {'save': 'Alteração Salva com sucesso',
-                                                               'pac': Paciente.objects.get(pk=pk)})
+                                                               'pac': Paciente.objects.get(pk=pk),
+                                                               'conv': HealthInsurance.objects.all()})
         except Exception as err:
             return render(request, 'pacient/update_pac.html', {'error': f'Não foi possivel salvar o novo paciente, '
                                                                         f'Por favor, '
                                                                         f'tente novamente com as informações corretas. '
                                                                         f'{err}',
-                                                               'pac': Paciente.objects.get(pk=pk)})
-
-
-
+                                                               'pac': Paciente.objects.get(pk=pk),
+                                                               'conv': HealthInsurance.objects.all()})
