@@ -47,7 +47,8 @@ def create_pac(request):
                 carteira_convenio=request.POST['carteira_convenio'],
                 val_carteirinha=request.POST['val_carteirinha'],
             )
-            return render(request, 'pacient/create_pac.html', {'save': 'Salvo com sucesso', 'conv': HealthInsurance.objects.all()})
+            return render(request, 'pacient/create_pac.html', {'save': 'Salvo com sucesso',
+                                                               'conv': HealthInsurance.objects.all()})
 
     except Exception as err:
         return render(request, 'pacient/create_pac.html', {'error': err, 'conv': HealthInsurance.objects.all()})

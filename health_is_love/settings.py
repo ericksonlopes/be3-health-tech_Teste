@@ -27,7 +27,8 @@ INSTALLED_APPS = [
     # apps
     'register_patient',
     'appointment',
-    'health_insurance'
+    'health_insurance',
+    'doctor'
 ]
 
 MIDDLEWARE = [

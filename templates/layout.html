@@ -104,10 +104,18 @@
               <li class="nav-item has-sub open"><a href="#"><i class="feather icon-clipboard"></i><span class="menu-title" data-i18n="Dashboard">Convênios</span></a>
               <ul class="menu-content">
                   <li><a class="menu-item" href="{% url 'list-hi' %}" data-i18n="eCommerce">Visualizar Convênios</a></li>
-
+                  <li><a class="menu-item" href="{% url 'create-hi' %}" data-i18n="eCommerce">Adicionar um Convênio</a></li>
               </ul>
+
+            <li class="nav-item has-sub open"><a href="#"><i class="feather icon-clipboard"></i><span class="menu-title" data-i18n="Dashboard">Doutores</span></a>
+              <ul class="menu-content">
+                  <li><a class="menu-item" href="{% url 'list-dc' %}" data-i18n="eCommerce">Visualizar Doutores</a></li>
+                  <li><a class="menu-item" href="{% url 'create-dc' %}" data-i18n="eCommerce">Adicionar Doutor</a></li>
+              </ul>
+          </li>
           </ul>
       </div>
+
     </div>
     <!-- END: Main Menu-->
 

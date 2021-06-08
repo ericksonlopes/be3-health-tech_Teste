@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block title %}Novo Convênio{% endblock %}
+
+{% block content %}
+  {% if save %}
+    <div class="col-md-11 mx-auto">
+      <div class="alert bg-success alert-dismissible mb-2" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+          <strong>{{ save }}, <a class="media-heading name" href="{% url 'list-dc' %}">Visualizar</a></strong>
+      </div>
+    </div>
+  {% endif %}
+
+  {% if error %}
+  <div class="col-md-11 mx-auto">
+      <div class="alert bg-danger alert-dismissible mb-" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+          <strong>{{ error }}</strong>
+      </div>
+  </div>
+  {% endif %}
+
+  <div class="col-md-11 mx-auto">
+    <div class="card">
+      <form method="post" action="{% url 'create-dc' %}">
+        <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLabel1">Criar Novo Doutor</h3>
+        </div>
+        {% include 'doctor/form_dc.html' %}
+
+        <div class="modal-footer">
+        <fieldset class="form-group position-relative has-icon-left mb-0">
+            <button type="submit" class="btn btn-info add-contact-item" data-dismiss="modal"><i
+                 class="fa fa-paper-plane-o d-block d-lg-none"></i> Criar Doutor</button>
+        </fieldset>
+</div>
+     </form>
+    </div>
+  </div>
+{% endblock %}
