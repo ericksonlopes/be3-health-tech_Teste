@@ -45,6 +45,48 @@
 		  </div>
 		</a>
 	</div>
+
+	 <div class="col-xl-3 col-sm-2 col-12">
+		<a href="{% url 'list-pac' %}">
+		  <div class="card bg-primary">
+			<div class="card-content">
+			  <div class="card-body">
+				<div class="media d-flex">
+				  <div class="media-body white text-left">
+					<h3>{{ len_dc }}</h3>
+					<span>Total de Doutores</span>
+				  </div>
+				  <div class="align-self-center">
+					<i class="icon-user white font-large-2 float-right"></i>
+				  </div>
+				</div>
+			  </div>
+			</div>
+
+		  </div>
+		</a>
+	</div>
+
+	<div class="col-xl-3 col-sm-6 col-12">
+		<a href="{% url 'list-appo' %}">
+		  <div class="card bg-gradient-directional-success">
+			<div class="card-content">
+			  <div class="card-body">
+				<div class="media d-flex">
+				  <div class="media-body white text-left">
+					<h3>{{ len_conv }}</h3>
+					<span>Total De Convênios</span>
+				  </div>
+				  <div class="align-self-center">
+					<i class="icon-clock white font-large-2 float-right"></i>
+				  </div>
+				</div>
+			  </div>
+			</div>
+
+		  </div>
+		</a>
+	</div>
   </div>
 
 

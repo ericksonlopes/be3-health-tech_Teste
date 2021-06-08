@@ -5,6 +5,7 @@ from datetime import date
 from register_patient.models import Paciente
 from doctor.models import Doctor
 
+
 @login_required
 def create_appo(request, pk):
     if request.method == 'GET':

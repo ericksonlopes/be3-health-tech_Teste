@@ -3,6 +3,7 @@ from register_patient.models import Paciente
 from django.contrib.auth.decorators import login_required
 from appointment.models import Appointment
 from health_insurance.models import HealthInsurance
+from doctor.models import Doctor
 
 
 @login_required
@@ -22,4 +23,6 @@ def homepage(request):
 
     return render(request, 'home.html', {'len_pac': len(Paciente.objects.all()),
                                          'porc_conv': porc_conv,
-                                         'len_appo': len(Appointment.objects.all())})
+                                         'len_appo': len(Appointment.objects.all()),
+                                         'len_conv': len(HealthInsurance.objects.all()),
+                                         'len_dc': len(Doctor.objects.all())})
