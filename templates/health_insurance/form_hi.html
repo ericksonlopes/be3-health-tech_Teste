@@ -8,7 +8,15 @@
             <small class="text-muted"></small>
         </h5>
         <input type="text" name='name' id="name" class="contact-name form-control" {% if hi %}value="{{ hi.name }}"{% endif %} placeholder="Digite o nome do convênio...">
-        <br>
+         <br>
+        {% if request.path != '/create-hi/' %}
+        <h6>Status</h6>
+                <select class="form-control" id="genero" name="genero">
+                    {% if hi %}<option>{{ hi.status }}</option>{% endif %}
+                    <option>Ativo</option>
+                    <option>Desativado</option>
+                </select>
+        {% endif %}
     </fieldset>
 
 </div>

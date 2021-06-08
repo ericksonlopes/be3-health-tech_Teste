@@ -51,16 +51,22 @@ Convênios
                                             <tr>
                                                 <th>Editar</th>
                                                 <th>Nome</th>
+                                                <th>Status</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         {% for item in hi %}
-                                            <tr>
-                                                <td>
-                                                    <a href="{% url 'update-hi' item.id %}" ><i class="fa fa-pencil-square-o"></i></a>
-                                                </td>
-                                                <td class="name">{{ item.name }}</td>
-                                            </tr>
+                                                <tr>
+                                                    <td>
+                                                        <a href="{% url 'update-hi' item.id %}" ><i class="fa fa-pencil-square-o"></i></a>
+                                                    </td>
+                                                    <td class="name">{{ item.name }}</td>
+                                                    {% if item.status == 'Ativo' %}
+                                                        <td><span class="badge badge-success">{{ item.status }}</span></td>
+                                                    {% else %}
+                                                        <td><span class="badge badge-danger">{{ item.status }}</span></td>
+                                                    {% endif %}
+                                                </tr>
                                         {% endfor %}
                                     </table>
                                 </div>

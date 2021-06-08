@@ -30,7 +30,8 @@ def update_hi(request, pk):
     try:
         if request.POST:
             HealthInsurance.objects.filter(pk=pk).update(
-                name=request.POST['name']
+                name=request.POST['name'],
+                status=request.POST['status']
             )
         return render(request, 'health_insurance/update_hi.html', {'save': 'Atualizado com sucesso',
                                                                    'hi': HealthInsurance.objects.get(pk=pk)})
