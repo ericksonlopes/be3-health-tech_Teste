@@ -11,10 +11,17 @@
          <br>
         {% if request.path != '/create-hi/' %}
         <h6>Status</h6>
-                <select class="form-control" id="genero" name="genero">
-                    {% if hi %}<option>{{ hi.status }}</option>{% endif %}
-                    <option>Ativo</option>
-                    <option>Desativado</option>
+                <select class="form-control" id="status" name="status">
+                    {% if hi %}
+                        {% if hi.status == 'Ativo'%}
+                            <option>Ativo</option>
+                            <option>Desativado</option>
+                        {% else %}
+                            <option>Desativado</option>
+                            <option>Ativo</option>
+                        {% endif %}
+                    {% endif %}
+
                 </select>
         {% endif %}
     </fieldset>

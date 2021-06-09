@@ -136,7 +136,10 @@
             {% if pac %}<option>{{ pac.convenio }}</option>{% endif %}
             <option></option>
             {% for con in conv %}
+                {% if con.name == pac.convenio %}
+                {% else %}
                 <option>{{ con.name }}</option>
+                {% endif %}
             {% endfor %}
         </select>
     </fieldset>
